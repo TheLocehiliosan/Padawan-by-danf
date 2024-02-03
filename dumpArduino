@@ -1,0 +1,8 @@
+#!/usr/local/bin/bash
+dumpfile="${1-./dumpfile.hex}"
+"/Users/timbyrne/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude" \
+  "-C/Users/timbyrne/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/etc/avrdude.conf" \
+  -v -V -patmega328p -carduino \
+  "-P/dev/cu.usbserial-1410" -b115200 \
+  -D \
+  "-Uflash:r:$dumpfile:i"
